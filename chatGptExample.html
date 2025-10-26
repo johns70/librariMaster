@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin - Configuración tienda de libros</title>
+  <style>
+    :root{--bg:#f6f7fb;--card:#fff;--accent:#0f62fe;--muted:#666}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:var(--bg);color:#111}
+    .container{display:grid;grid-template-columns:320px 1fr;gap:20px;max-width:1200px;margin:28px auto;padding:20px}
+    .panel{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(19,23,34,0.06)}
+    h2{margin:0 0 12px;font-size:18px}
+    .section{margin-bottom:14px}
+    label.switch{display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:8px}
+    input[type=checkbox]{width:18px;height:18px}
+    .preview{padding:18px}
+
+    /* Catalogo */
+    .catalog{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+    .book{background:#fff;padding:10px;border-radius:10px;box-shadow:0 4px 10px rgba(11,14,22,0.04);display:flex;flex-direction:column}
+    .cover{height:180px;border-radius:6px;background:linear-gradient(135deg,#e9eefc,#fdf6ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
+    .meta{margin-top:8px;font-size:14px}
+    .meta .title{font-weight:600}
+    .actions{margin-top:auto;display:flex;gap:8px;align-items:center}
+    .btn{padding:8px 10px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid #e3e6f0;color:#111}
+
+    /* Cart */
+    .cart{margin-top:12px;border-radius:10px;padding:12px;background:#fff}
+    .cart h3{margin:0 0 8px}
+
+    /* Responsive */
+    @media(max-width:800px){.container{grid-template-columns:1fr;padding:12px}.panel{margin-bottom:12px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="panel" id="adminPanel">
+      <h2>Panel de configuración</h2>
+
+      <div class="section">
+        <label class="switch"><input type="checkbox" id="toggleCatalog" checked><span>Mostrar catálogo</span></label>
+        <label class="switch"><input type="checkbox" id="toggleCart" checked><span>Habilitar carrito</span></label>
+        <label class="switch"><input type="checkbox" id="togglePayment" checked><span>Habilitar pasarela de pago (simulada)</span></label>
+        <label class="switch"><input type="checkbox" id="toggleWhatsapp" checked><span>Mostrar botón WhatsApp</span></label>
+        <label class="switch"><input type="checkbox" id="toggleFilters" checked><span>Habilitar filtros</span></label>
+      </div>
+
+      <div class="section">
+        <h3 style="font-size:14px;margin-bottom:8px">Acciones</h3>
+        <button class="btn" id="saveSettings">Guardar ajustes (local)</button>
+        <button class="btn secondary" id="resetSettings">Restablecer por defecto</button>
+      </div>
+
+      <div style="margin-top:10px;font-size:13px;color:var(--muted)">Los ajustes se guardan en <strong>localStorage</strong> para pruebas. En producción conecta esto a tu backend.</div>
+    </aside>
+
+    <main class="panel preview" id="previewArea">
+      <h2>Vista previa de la tienda</h2>
+
+      <div id="filtersBar" style="margin-bottom:12px;display:flex;gap:10px;align-items:center">
+        <input id="searchInput" placeholder="Buscar por título o autor" style="flex:1;padding:8px;border-radius:8px;border:1px solid #e6e9f2">
+        <select id="genreFilter" style="padding:8px;border-radius:8px;border:1px solid #e6e9f2">
+          <option value="">Todos los géneros</option>
+          <option>Fantasía</option>
+          <option>Novela</option>
+          <option>No Ficción</option>
+        </select>
+      </div>
+
+      <div id="catalogArea">
+        <div class="catalog" id="catalogList"></div>
+
+        <div id="cartArea" style="display:none">
+          <div class="cart">
+            <h3>Carrito</h3>
+            <div id="cartItems">(vacío)</div>
+            <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+              <button class="btn" id="checkoutBtn">Pagar</button>
+              <button class="btn secondary" id="checkoutWhatsapp">Enviar pedido por WhatsApp</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    // Datos de ejemplo
+    const sampleBooks = [
+      {id:1,title:'Cien años de soledad',author:'Gabriel García Márquez',price:18.5,genre:'Novela'},
+      {id:2,title:'El nombre del viento',author:'Patrick Rothfuss',price:22.0,genre:'Fantasía'},
+      {id:3,title:'Sapiens',author:'Yuval Noah Harari',price:15.0,genre:'No Ficción'},
+      {id:4,title:'El extranjero',author:'Albert Camus',price:12.5,genre:'Novela'}
+    ];
+
+    // Elementos DOM
+    const toggles = {
+      catalog: document.getElementById('toggleCatalog'),
+      cart: document.getElementById('toggleCart'),
+      payment: document.getElementById('togglePayment'),
+      whatsapp: document.getElementById('toggleWhatsapp'),
+      filters: document.getElementById('toggleFilters')
+    };
+    const catalogList = document.getElementById('catalogList');
+    const cartArea = document.getElementById('cartArea');
+    const cartItems = document.getElementById('cartItems');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const checkoutWhatsapp = document.getElementById('checkoutWhatsapp');
+    const filtersBar = document.getElementById('filtersBar');
+    const searchInput = document.getElementById('searchInput');
+    const genreFilter = document.getElementById('genreFilter');
+
+    // Estado
+    let state = {
+      catalog: true,
+      cart: true,
+      payment: true,
+      whatsapp: true,
+      filters: true,
+      cartItems: []
+    };
+
+    // Cargar ajustes desde localStorage si existen
+    function loadSettings(){
+      const saved = localStorage.getItem('storeSettings');
+      if(saved){
+        const s = JSON.parse(saved);
+        state = {...state,...s};
+      }
+      // aplicar a checkboxes
+      toggles.catalog.checked = state.catalog;
+      toggles.cart.checked = state.cart;
+      toggles.payment.checked = state.payment;
+      toggles.whatsapp.checked = state.whatsapp;
+      toggles.filters.checked = state.filters;
+    }
+
+    function saveSettings(){
+      const toSave = {catalog: toggles.catalog.checked, cart: toggles.cart.checked, payment: toggles.payment.checked, whatsapp: toggles.whatsapp.checked, filters: toggles.filters.checked};
+      localStorage.setItem('storeSettings', JSON.stringify(toSave));
+      alert('Ajustes guardados en localStorage');
+      applySettings();
+    }
+
+    function resetSettings(){
+      localStorage.removeItem('storeSettings');
+      toggles.catalog.checked = true;
+      toggles.cart.checked = true;
+      toggles.payment.checked = true;
+      toggles.whatsapp.checked = true;
+      toggles.filters.checked = true;
+      applySettings();
+    }
+
+    function applySettings(){
+      state.catalog = toggles.catalog.checked;
+      state.cart = toggles.cart.checked;
+      state.payment = toggles.payment.checked;
+      state.whatsapp = toggles.whatsapp.checked;
+      state.filters = toggles.filters.checked;
+
+      // Mostrar/ocultar catálogo
+      document.getElementById('catalogArea').style.display = state.catalog ? 'block' : 'none';
+
+      // Carrito
+      cartArea.style.display = state.cart ? 'block' : 'none';
+
+      // WhatsApp button visibility - if disabled, hide that action
+      checkoutWhatsapp.style.display = state.whatsapp ? 'inline-block' : 'none';
+
+      // Payment enable/disable
+      checkoutBtn.disabled = !state.payment;
+      checkoutBtn.textContent = state.payment ? 'Pagar' : 'Pasarela deshabilitada';
+
+      // Filters
+      filtersBar.style.display = state.filters ? 'flex' : 'none';
+
+      renderCatalog();
+      renderCart();
+    }
+
+    // Render catálogo
+    function renderCatalog(){
+      catalogList.innerHTML = '';
+      const q = searchInput.value.toLowerCase();
+      const genre = genreFilter.value;
+      const filtered = sampleBooks.filter(b => {
+        if(q && !(b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q))) return false;
+        if(genre && b.genre !== genre) return false;
+        return true;
+      });
+
+      if(filtered.length === 0){ catalogList.innerHTML = '<div style="color:var(--muted)">No hay libros que mostrar.</div>'; return }
+
+      filtered.forEach(b =>{
+        const el = document.createElement('div'); el.className = 'book';
+        el.innerHTML = `
+          <div class="cover">PORTADA<br><small style="font-size:12px">${b.genre}</small></div>
+          <div class="meta"><div class="title">${b.title}</div><div style="font-size:13px;color:var(--muted)">${b.author}</div><div style="margin-top:6px;font-weight:700">$ ${b.price.toFixed(2)}</div></div>
+          <div class="actions">
+            <button class="btn" data-id="${b.id}">Agregar</button>
+            <button class="btn secondary" data-id="${b.id}">Ver</button>
+          </div>
+        `;
+        catalogList.appendChild(el);
+      });
+
+      // attach events
+      catalogList.querySelectorAll('.btn').forEach(btn=>{
+        btn.onclick = () => {
+          const id = Number(btn.dataset.id);
+          if(btn.classList.contains('secondary')){ alert('Ver detalle: ' + id); return }
+          addToCart(id);
+        }
+      });
+    }
+
+    // Carrito
+    function addToCart(id){
+      const book = sampleBooks.find(b=>b.id===id);
+      if(!book) return;
+      state.cartItems.push(book);
+      renderCart();
+    }
+
+    function renderCart(){
+      if(state.cartItems.length === 0) cartItems.innerHTML = '(vacío)';
+      else {
+        cartItems.innerHTML = state.cartItems.map((i,idx)=>`<div>${idx+1}. ${i.title} — $${i.price.toFixed(2)}</div>`).join('');
+      }
+    }
+
+    // Checkout actions
+    checkoutBtn.onclick = () => {
+      if(!state.payment){ alert('La pasarela de pago está deshabilitada.'); return }
+      if(state.cartItems.length===0){ alert('El carrito está vacío.'); return }
+      // Simular pago
+      alert('Simulando pago... (en producción integra Stripe/PayPal)\nTotal: $' + state.cartItems.reduce((s,i)=>s+i.price,0).toFixed(2));
+      state.cartItems = [];
+      renderCart();
+    }
+
+    checkoutWhatsapp.onclick = () => {
+      if(state.cartItems.length===0){ alert('El carrito está vacío.'); return }
+      const text = encodeURIComponent('Hola, quiero pedir estos libros: ' + state.cartItems.map(b=>b.title).join(', '));
+      window.open('https://wa.me/?text=' + text, '_blank');
+    }
+
+    // Wire up toggles
+    Object.values(toggles).forEach(t=>t.addEventListener('change', applySettings));
+    document.getElementById('saveSettings').addEventListener('click', saveSettings);
+    document.getElementById('resetSettings').addEventListener('click', resetSettings);
+
+    searchInput.addEventListener('input', renderCatalog);
+    genreFilter.addEventListener('change', renderCatalog);
+
+    // Init
+    loadSettings();
+    applySettings();
+  </script>
+</body>
+</html>

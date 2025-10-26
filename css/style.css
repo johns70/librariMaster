@@ -1,0 +1,270 @@
+:root {
+ --blanco: #ffffff;
+ --negro: #000000;
+ --gris: #343A40;
+
+ --fuentePrincipal: 'Raleway', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+body{
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+h1,h2,h3 {
+    font-weight: 900;
+    margin: 1rem 0 4rem 0;
+}
+
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 5.8rem;
+}
+
+h3 {
+    font-size: 5rem;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.btn {
+    color: var(--gris);
+    background-color: va(--blanco);
+    border: 1px solid var(--gris);
+    padding: .5rem 2rem;
+    transition: background-color .3s;
+}
+
+.btn:hover {
+    background-color: var(--gris);
+    color: var(--blanco);
+} 
+
+/* utilidades */
+.text-center {
+    text-align: center;
+}
+.mt-5 {
+    margin-top: 5rem;
+}
+
+/* header  */
+
+.header {
+    min-height: 60rem;
+    background-image: url(../img/antecedentes-biblioteca_250469-1610.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 5rem 0;
+}
+
+@media(min-width: 768px) {
+    .header{
+        padding: 2rem  0;
+    }
+}
+
+.contenido-header {
+    display: flex;
+    flex-direction: column;
+    color: var(--blanco);
+    height: calc(60rem - 4rem);
+    justify-content: space-between;
+}
+
+
+.nombre-sitio {
+    font-weight: 300;
+    text-align: center;
+    font-size: 3rem;
+}
+
+@media(min-width: 768px) {
+    .nombre-sitio {
+    font-size: 5rem;
+}
+}
+
+.nombre-sitio span {
+    font-weight: 900;
+}
+
+@media(min-width: 768px) {
+    .barra {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media(min-width: 768px) {
+    .menu {
+        align-items: flex-end;
+    }
+}
+
+.header a {
+    color: var(--blanco);
+    font-size: 2rem;
+}
+
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+@media(min-width: 768px) {
+    .navegacion {
+        flex-direction: row;
+    }
+}
+
+.navegacion a {
+    padding: .5rem;
+    margin-bottom: 1.2rem;
+    transition: background-color 400ms;
+    width: 100%; 
+    text-align: center;
+}
+
+@media(min-width: 768px) {
+    .navegacion a{
+        padding: 1rem 2rem ;
+        width: unset;
+    }
+}
+
+.navegacion a:hover {
+    background-color: rgb(255 255 255 / .5);
+    color: var(--negro);
+}
+
+.slogan h2 {
+    font-size: 2.8rem;
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+
+.slogan p {
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 0 0 .5rem 0;
+}
+
+@media(min-width: 768px){
+    .slogan h2 {
+        font-size: 3.5rem;
+        margin: 0;
+        text-align: end;
+    }
+
+    .slogan p {
+        text-align: end;
+        font-size: 2.2rem;
+        margin: 0;
+    }
+
+}
+
+/* TRABAJANDO CON LOS CARDS */
+
+.productos{
+    margin-top: 5rem;
+   
+}
+
+.producto {
+ /* background-color: azure; */
+ margin-bottom: 1rem;
+}
+
+.productos__heading {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 4.5rem;
+}
+@media(min-width: 768px) {
+    .producto__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6rem;
+    }
+}
+
+
+.producto__contenido {
+    padding: 5rem;
+}
+.producto__nombre {
+    font-size: 3rem;
+}
+.producto__descripcio {
+    color: #8b8b8b;
+    margin: 0;
+}
+
+.producto__precios {
+    display: flex;
+    justify-content: space-between;
+}
+
+.producto__precio {
+    font-size: 2rem;
+    color: var(--negro);
+    font-weight: 900;
+    margin: 0;
+}
+
+.producto__boton {
+    all: unset;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 1rem 0;
+}
+
+.producto__imagen {
+  display: block;          /* Permite centrar con margin auto */
+  margin: 0 auto;          /* Centra horizontalmente */
+  max-width: 200px;        /* Controla el tamaño máximo */
+  height: auto;            /* Mantiene la proporción */
+  border-radius: 8px;      /* (Opcional) esquinas redondeadas */
+}

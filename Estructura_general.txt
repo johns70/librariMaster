@@ -1,0 +1,19 @@
+/tienda-libros/
+│
+├── admin.html       → panel de configuración
+├── index.html       → página principal (catálogo de libros)
+├── carrito.html     → vista del carrito
+├── libro.html       → detalle de un libro
+│
+├── css/
+│   ├── admin.css
+│   ├── estilos.css
+│   └── carrito.css
+│
+├── js/
+│   ├── admin.js
+│   ├── catalogo.js
+│   └── carrito.js
+│
+└── img/
+    └── (portadas)

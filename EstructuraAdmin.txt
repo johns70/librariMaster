@@ -1,0 +1,42 @@
+PANEL DE ADMINISTRACIÓN
+│
+├── SECCIÓN 1: GESTIÓN DE LIBROS
+│     ├── Botón: "Agregar libro"
+│     ├── Tabla/Listado de libros
+│     │      - Título del libro
+│     │      - Autor
+│     │      - Precio
+│     │      - Stock / Cantidad
+│     │      - Estado (Activo / Inactivo)
+│     │      - Botones: [Editar] [Eliminar]
+│     └── Formulario: "Nuevo / Editar libro"
+│             - Campo título
+│             - Campo autor
+│             - Campo descripción
+│             - Campo precio
+│             - Campo categoría
+│             - Subir imagen (portada)
+│             - Botón Guardar
+│
+├── SECCIÓN 2: CATEGORÍAS / GÉNEROS
+│     ├── Listado de categorías existentes
+│     ├── Agregar nueva categoría
+│     └── Botón: [Eliminar categoría]
+│
+├── SECCIÓN 3: CONFIGURACIÓN DE TIENDA
+│     ├── Checkbox: Activar catálogo
+│     ├── Checkbox: Habilitar carrito
+│     ├── Checkbox: Activar pagos en línea
+│     ├── Checkbox: Mostrar botón de contacto
+│     └── Botón: Guardar configuración
+│
+├── SECCIÓN 4: USUARIOS Y PERMISOS (opcional)
+│     ├── Listado de administradores
+│     ├── Asignar roles (Ej: "vendedor", "super admin")
+│     ├── Botón: [Agregar usuario]
+│     └── Botón: [Eliminar usuario]
+│
+└── SECCIÓN 5: REPORTES / ESTADÍSTICAS (más adelante)
+      ├── Total de ventas
+      ├── Libros más vendidos
+      └── Clientes frecuentes
