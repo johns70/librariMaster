@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./css/normalize.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="contacto-header">
+        <div class="contenedor-contacto">
+            <div class="barra-contacto">
+
+                <div class="logo">
+                    <h1 class="nombre-sitio contacto-title">Libreri<span>Master</span></h1>
+                </div>
+
+                <div class="menu">
+                    <nav class="navegacion-contacto mt-3">
+                        <a class="link-contacto" href="./index.html">Menu principal</a>
+                        <a class="link-contacto" href="#">Catalogo</a>
+                        <a class="link-contacto" href="#">Lo Nuevo</a>
+                        <a class="link-contacto" href="./contacto.html">Contactanos</a>
+
+                    <div class="contenedor-carrito">
+                          <ul>
+                        <li class="submenu">
+                                <img src="./img/7323211845d8baf15fabb4767b88c1b1-removebg-preview.png" width="60px" id="img-carrito">
+                                <div id="carrito">
+                                        
+                                        <table id="lista-carrito" class="u-full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>Imagen</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                        
+                                          <!-- <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a> -->
+                                          <a href="#"  class="ver-carrito">Ver Carrito</a>
+                                       
+                                        
+                                </div>
+                        </li>
+                 </ul>
+                   </div> <!-- carro  -->
+                    </nav>
+
+                
+
+                </div>
+            </div>
+    </div>
+        </div>
+
+      
+    </header>
+
+     <section class="contenedor">
+        <div class="productos">
+            <div class="seleccion">
+                   <div class="seleccion_filter">
+                    <label for="editorial">Editoriales</label>
+                    <select class="u-full-width" id="editorial">
+                        <option value="">Seleccione</option>
+                        <option value="Penguin Random House">Penguin Random House</option>
+                        <option value="Planeta">Planeta</option>
+                        <option value="Alfaguara">Alfaguara</option>
+                        <option value="Anagrama">Anagrama</option>
+                        <option value="Seix Barral">Seix Barral</option>
+                        <option value="Siglo XXI Editores">Siglo XXI Editores</option>
+                        <option value="Fondo de Cultura Económica">Fondo de Cultura Económica</option>
+                        <option value="Sudamericana">Sudamericana</option>
+                        <option value="Minotauro">Minotauro</option>
+                        <option value="Debolsillo">Debolsillo</option>
+                        <option value="Scribner">Scribner</option>
+                        <option value="Alba">Alba</option>
+                        <option value="Emu">Emu</option>
+                    </select>
+                </div>
+
+                <div class="seleccion_filter">
+                    <label for="autor">Autores</label>
+                    <select class="u-full-width" id="autor">
+                        <option value="">Seleccione</option>
+                        <option value="Gabriel García Márquez">Gabriel García Márquez</option>
+                        <option value="Mario Vargas Llosa">Mario Vargas Llosa</option>
+                        <option value="Julio Cortázar">Julio Cortázar</option>
+                        <option value="Jorge Luis Borges">Jorge Luis Borges</option>
+                        <option value="Juan Rulfo">Juan Rulfo</option>
+                        <option value="Ramon Amaya Amador">Ramon Amaya Amador</option>
+                        <option value="Pablo Neruda">Pablo Neruda</option>
+                        <option value="Stephen King">Stephen King</option>
+                        <option value="H.P. Lovecraft">H.P. Lovecraft</option>
+                        <option value="Carlos Ruiz Zafón">Carlos Ruiz Zafón</option>
+                    </select>
+                </div>
+
+                <div class="seleccion_filter">
+                    <label for="genero">Géneros</label>
+                    <select class="u-full-width" id="genero">
+                        <option value="">Seleccione</option>
+                        <option value="Novela">Novela</option>
+                        <option value="Ciencia ficción">Ciencia ficción</option>
+                        <option value="Fantasía">Fantasía</option>
+                        <option value="Terror">Terror</option>
+                        <option value="Misterio">Misterio</option>
+                        <option value="Suspenso">Suspenso</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Historia">Historia</option>
+                        <option value="Biografía">Biografía</option>
+                        <!-- <option value="Poesía">Poesía</option> -->
+                        <!-- <option value="Ensayo">Ensayo</option> -->
+                        <option value="Autoayuda">Autoayuda</option>
+                        <option value="Filosofía">Filosofía</option>
+                        <option value="Literatura clásica">Literatura clásica</option>
+                        <option value="Realismo mágico">Realismo mágico</option>
+                    </select>
+                </div>
+
+                </div>
+            <input class="input_buscar" type="text" name="" id="" placeholder="🔍 Busca Géneros o Libro">
+            <h2 class="productos__heading">Nuestrso Géneros</h2>
+                
+            <div class="producto__grid">
+                
+
+                <div class="producto"> <!-- producto -->
+                  <a href="./chatGptExample.html" class="producto__link">
+                  <a href="./chatGptExample.html" class="producto__link">
+                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
+                  </a>                  </a>
+                  <div class="producto__contenido">
+                    <h3 class="producto__nombre">Título del libro</h3>
+                    <p class="producto__autor">Autor: Nombre del autor</p>
+                    <p class="producto__descripcio">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
+                    <div class="producto__precios">
+                        <p class="producto__precio"> $9.99</p>
+                    </div>
+                    <button class="producto__boton" data-id="1">Agregar al carrito</button>
+                  </div>
+                </div> <!-- PRODUCTO !-->
+
+                 <div class="producto"> <!-- producto -->
+                  <a href="#" class="producto__link">
+                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
+                  </a>                  <div class="producto__contenido">
+                    <h3 class="producto__nombre">Título del libro</h3>
+                    <p class="producto__autor">Autor: Nombre del autor</p>
+                    <p class="producto__descripcio">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
+                    <div class="producto__precios">
+                        <p class="producto__precio"> $9.99</p>
+                    </div>
+                    <button class="producto__boton" data-id="2">Agregar al carrito</button>
+                  </div>
+                </div> <!-- PRODUCTO !-->
+
+                 <div class="producto"> <!-- producto -->
+                  <a href="#" class="producto__link">
+                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
+                  </a>                  <div class="producto__contenido">
+                    <h3 class="producto__nombre">Título del libro</h3>
+                    <p class="producto__autor">Autor: Nombre del autor</p>
+                    <p class="producto__descripcio">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
+                    <div class="producto__precios">
+                        <p class="producto__precio"> $9.99</p>
+                    </div>
+                    <button class="producto__boton" data-id="3">Agregar al carrito</button>
+                  </div>
+                </div> <!-- PRODUCTO !-->
+
+                 <div class="producto"> <!-- producto -->
+                  <a href="#" class="producto__link">
+                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
+                  </a>                  <div class="producto__contenido">
+                    <h3 class="producto__nombre">Título del libro</h3>
+                    <p class="producto__autor">Autor: Nombre del autor</p>
+                    <p class="producto__descripcio">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
+                    <div class="producto__precios">
+                        <p class="producto__precio"> $9.99</p>
+                    </div>
+                      
+                          <button class="producto__boton" data-id="4">Agregar al carrito</button>
+                     
+                  </div>
+                </div> <!-- PRODUCTO !-->
+
+                 <div class="producto"> <!-- producto -->
+                  <a href="#" class="producto__link">
+                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
+                  </a>                  <div class="producto__contenido">
+                    <h3 class="producto__nombre">Título del libro</h3>
+                    <p class="producto__autor">Autor: Nombre del autor</p>
+                    <p class="producto__descripcio">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
+                    <div class="producto__precios">
+                        <p class="producto__precio"> $9.99</p>
+                    </div>
+                    <button class="producto__boton" data-id="5">Agregar al carrito</button>
+                  </div>
+                </div> <!-- PRODUCTO !-->
+
+                 <div class="producto"> <!-- producto -->
+                  <a href="#" class="producto__link">
+                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
+                  </a>                  <div class="producto__contenido">
+                    <h3 class="producto__nombre">Título del libro</h3>
+                    <p class="producto__autor">Autor: Nombre del autor</p>
+                    <p class="producto__descripcio">
+                        Lorem ipsum dolor sit amet 
+                        consectetur adipisicing elit.
+                         Unde harum laudantium, 
+                        explicabo voluptates cumque 
+                        voluptas doloribus provident,
+                        </p>
+                    <div class="producto__precios">
+                        <p class="producto__precio"> $9.99</p>
+                    </div>
+                    <button class="producto__boton" data-id="6">Agregar al carrito</button>
+                  </div>
+                </div> <!-- PRODUCTO !-->
+
+            </div>   <!--PRODUCTO-GRID -->
+
+        </div>
+       </section>
+       
+    </main>
+
+    
+   <footer class="footer-simple">
+  <div class="footer-simple__contenido contenedor">
+    <h4>Únete a nuestro club de lectura</h4>
+    <p>Recibe novedades, recomendaciones y descuentos exclusivos en tu correo.</p>
+    <form class="footer-simple__form">
+      <input type="email" placeholder="Tu email">
+      <button type="submit">Unirme</button>
+    </form>
+    <p class="footer-simple__copy">&copy; 2026 LibreriMaster. Todos los derechos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>

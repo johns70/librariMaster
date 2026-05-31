@@ -33,13 +33,12 @@ h1 {
 }
 
 h2 {
-    font-size: 5.8rem;
+  font-size: 4.2rem;
 }
 
 h3 {
-    font-size: 5rem;
+  font-size: 3.2rem;
 }
-
 
 a {
     text-decoration: none;
@@ -56,16 +55,20 @@ img {
 }
 
 .btn {
-    color: var(--gris);
-    background-color: va(--blanco);
-    border: 1px solid var(--gris);
-    padding: .5rem 2rem;
+    color: var(--negro);
+    background-color: #8080804d;
+    padding: 1rem 2rem;
+    border: none;
     transition: background-color .3s;
+    margin-bottom: 2rem;
+   
 }
 
 .btn:hover {
-    background-color: var(--gris);
+    background-color: var(--negro);
     color: var(--blanco);
+    
+
 } 
 
 /* utilidades */
@@ -76,14 +79,20 @@ img {
     margin-top: 5rem;
 }
 
+.mt-3 {
+    margin-bottom: 3rem;
+}
+
+
 /* header  */
 
 .header {
     min-height: 60rem;
-    background-image: url(../img/antecedentes-biblioteca_250469-1610.jpg);
+    /* background-image: url(../img/antecedentes-biblioteca_250469-1610.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    background-color: #dfdfdf;
     padding: 5rem 0;
 }
 
@@ -99,6 +108,10 @@ img {
     color: var(--blanco);
     height: calc(60rem - 4rem);
     justify-content: space-between;
+    background-image: url(../img/condemontecrito-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-position: center;
 }
 
 
@@ -138,7 +151,7 @@ img {
     }
 }
 
-.header a {
+.header .link {
     color: var(--blanco);
     font-size: 2rem;
 }
@@ -148,6 +161,8 @@ img {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    font-weight: 900;
+    font-size: 1.5rem;
 }
 
 @media(min-width: 768px) {
@@ -156,7 +171,7 @@ img {
     }
 }
 
-.navegacion a {
+.navegacion .link {
     padding: .5rem;
     margin-bottom: 1.2rem;
     transition: background-color 400ms;
@@ -165,7 +180,7 @@ img {
 }
 
 @media(min-width: 768px) {
-    .navegacion a{
+    .navegacion .link{
         padding: 1rem 2rem ;
         width: unset;
     }
@@ -223,7 +238,7 @@ img {
 @media(min-width: 768px) {
     .producto__grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 6rem;
     }
 }
@@ -238,6 +253,8 @@ img {
 .producto__descripcio {
     color: #8b8b8b;
     margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.6;
 }
 
 .producto__precios {
@@ -246,11 +263,12 @@ img {
 }
 
 .producto__precio {
-    font-size: 2rem;
+    font-size: 2.4rem;
     color: var(--negro);
     font-weight: 900;
     margin: 0;
 }
+
 
 .producto__boton {
     all: unset;
@@ -259,7 +277,11 @@ img {
     text-align: center;
     color: white;
     padding: 1rem 0;
+      margin-top: 1.5rem;
+  font-weight: 700;
 }
+
+
 
 .producto__imagen {
   display: block;          /* Permite centrar con margin auto */
@@ -267,4 +289,276 @@ img {
   max-width: 200px;        /* Controla el tamaño máximo */
   height: auto;            /* Mantiene la proporción */
   border-radius: 8px;      /* (Opcional) esquinas redondeadas */
+  transition: transform 300ms;
+}
+
+.producto:hover .producto__imagen {
+  transform: scale(1.05);
+}
+
+.contenedor-carrito ul {
+    list-style: none;
+}
+
+
+
+ #carrito {
+    display: none;
+    position: absolute;
+    top: 90%;
+    width: 480px;
+    right: -170px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 16px;
+    z-index: 100;
+    color: black;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu:hover #carrito {
+    display: flex;
+    flex-direction: column;
+}
+
+#lista-carrito {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+#lista-carrito th,
+#lista-carrito td {
+     padding: 10px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+#lista-carrito img {
+    width: 50px;
+    height: auto;
+}
+
+/* #vaciar-carrito {
+  border: 1px solid black;
+  color: black;
+  padding: 0.3rem;
+  margin-top: 0.6rem;
+} */
+
+.ver-carrito{
+    border: 1px solid black;
+    color: black;
+    padding: 0.3rem;
+    margin-top: 0.6rem;
+    text-align: center;
+}
+
+.btn__all{
+    width: 10%;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.footer-principal {
+    /* background-image: url(../img/club_lectura.avif);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #000;
+    opacity: 1;
+    padding: 5rem 2rem;
+}
+
+
+
+/* CONTACTO  */
+.contacto-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.contenedor-contacto {
+    width: 100%;
+    background-color:#8b8b8b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacto-title {
+        margin: 3rem 0 2rem 0;
+        color: white;
+}
+
+.navegacion-contacto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 4rem;
+}
+
+
+.link-contacto {
+    list-style: none;
+    color: white;
+    padding: 1.5rem;
+    margin-bottom: 1.2rem;
+    transition: background-color 400ms;
+    /* width: 100%;  */
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.link-contacto:hover {
+    background-color: rgb(255 255 255 / .5);
+    color: var(--negro);
+}
+
+.formulario {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.formulario fieldset{
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.formulario legend{
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    color: #ffff;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.campo {
+    display: flex;
+    /* flex-direction: row; */
+    margin-bottom: 1rem;
+}
+
+ .campo label {
+    flex-basis: 10rem;
+}
+
+
+/* .campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"] */
+.campo input:not([type="radio"]),
+.campo textarea,
+.campo select {
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
+
+.main .title{
+    text-align: center;
+    font-weight: 300;
+}
+
+
+.footer-simple {
+    background-color: #000;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-simple__contenido h4 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-simple__contenido p {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-simple__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer-simple__form input {
+    padding: 1rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    width: 70%;
+    max-width: 400px;
+}
+
+.footer-simple__form button {
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-simple__form button:hover {
+    background-color: #eaeaea;
+    transform: translateY(-2px);
+}
+
+.footer-simple__copy {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.input_buscar{
+    display: flex;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 1rem;
+    border: none;
+    background-color:  #00000014;
+}
+  
+.seleccion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5rem 0 ;
+}
+.seleccion_filter{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.seleccion_filter label {
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.seleccion_filter select {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.u-full-width {
+    width: 100%;
 }

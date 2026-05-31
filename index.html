@@ -23,15 +23,44 @@
                 <div class="menu">
                     <nav class="navegacion">
                         <a class="link" href="#">Menu principal</a>
-                        <a class="link" href="#">Catalogo</a>
+                        <a class="link" href="Catalogo.html">Catalogo</a>
                         <a class="link" href="#">Lo Nuevo</a>
-                        <a class="link" href="#">Contactanos</a>
+                        <a class="link" href="./contacto.html">Contactanos</a>
+
+                    <div class="contenedor-carrito">
+                          <ul>
+                        <li class="submenu">
+                                <img src="./img/7323211845d8baf15fabb4767b88c1b1-removebg-preview.png" width="60px" id="img-carrito">
+                                <div id="carrito">
+                                        
+                                        <table id="lista-carrito" class="u-full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>Imagen</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                        
+                                          <!-- <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a> -->
+                                          <a href="#"  class="ver-carrito">Ver Carrito</a>
+                                       
+                                        
+                                </div>
+                        </li>
+                 </ul>
+                   </div> <!-- carro  -->
                     </nav>
 
                     <form class="busqueda">
                         <input type="text" placeholder="Buscar libros...">
                         <button type="submit">🔍</button>
                     </form>
+
                 </div>
             </div>
             <div class="slogan">
@@ -48,102 +77,50 @@
         <div class="productos">
             <h2 class="productos__heading">Nuestrso Libros</h2>
 
-            <div class="producto__grid">
-                
+            <div class="producto__grid" id="producto-grid">
+
                 <div class="producto"> <!-- producto -->
-                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
+                  <a href="./chatGptExample.html" class="producto__link">
+                  <a href="./chatGptExample.html" class="producto__link">
+                    <img class="producto__imagen" src="./img/sombra_del_viento.webp" alt="cementerio de animales">
+                  </a>                  </a>
                   <div class="producto__contenido">
                     <h3 class="producto__nombre">Título del libro</h3>
                     <p class="producto__autor">Autor: Nombre del autor</p>
                     <p class="producto__descripcio">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
                     <div class="producto__precios">
-                        <p class="producto__precio">Precio: $9.99</p>
+                        <p class="producto__precio"> $9.99</p>
                     </div>
-                    <button class="producto__boton">Más info</button>
+                    <button class="producto__boton" data-id="1">Agregar al carrito</button>
                   </div>
-                </div> <!-- PRODUCTO !-->
-
-                 <div class="producto"> <!-- producto -->
-                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
-                  <div class="producto__contenido">
-                    <h3 class="producto__nombre">Título del libro</h3>
-                    <p class="producto__autor">Autor: Nombre del autor</p>
-                    <p class="producto__descripcio">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
-                    <div class="producto__precios">
-                        <p class="producto__precio">Precio: $9.99</p>
-                    </div>
-                    <button class="producto__boton">Más info</button>
-                  </div>
-                </div> <!-- PRODUCTO !-->
-
-                 <div class="producto"> <!-- producto -->
-                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
-                  <div class="producto__contenido">
-                    <h3 class="producto__nombre">Título del libro</h3>
-                    <p class="producto__autor">Autor: Nombre del autor</p>
-                    <p class="producto__descripcio">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
-                    <div class="producto__precios">
-                        <p class="producto__precio">Precio: $9.99</p>
-                    </div>
-                    <button class="producto__boton">Más info</button>
-                  </div>
-                </div> <!-- PRODUCTO !-->
-
-                 <div class="producto"> <!-- producto -->
-                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
-                  <div class="producto__contenido">
-                    <h3 class="producto__nombre">Título del libro</h3>
-                    <p class="producto__autor">Autor: Nombre del autor</p>
-                    <p class="producto__descripcio">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
-                    <div class="producto__precios">
-                        <p class="producto__precio">Precio: $9.99</p>
-                    </div>
-                    <button class="producto__boton">Más info</button>
-                  </div>
-                </div> <!-- PRODUCTO !-->
-
-                 <div class="producto"> <!-- producto -->
-                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
-                  <div class="producto__contenido">
-                    <h3 class="producto__nombre">Título del libro</h3>
-                    <p class="producto__autor">Autor: Nombre del autor</p>
-                    <p class="producto__descripcio">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
-                    <div class="producto__precios">
-                        <p class="producto__precio">Precio: $9.99</p>
-                    </div>
-                    <button class="producto__boton">Más info</button>
-                  </div>
-                </div> <!-- PRODUCTO !-->
-
-                 <div class="producto"> <!-- producto -->
-                    <img class="producto__imagen" src="./img/81I0-9qHm6L._AC_UF894,1000_QL80_.jpg" alt="cementerio de animales">
-                  <div class="producto__contenido">
-                    <h3 class="producto__nombre">Título del libro</h3>
-                    <p class="producto__autor">Autor: Nombre del autor</p>
-                    <p class="producto__descripcio">
-                        Lorem ipsum dolor sit amet 
-                        consectetur adipisicing elit.
-                         Unde harum laudantium, 
-                        explicabo voluptates cumque 
-                        voluptas doloribus provident,
-                        </p>
-                    <div class="producto__precios">
-                        <p class="producto__precio">Precio: $9.99</p>
-                    </div>
-                    <button class="producto__boton">Agregar al carrito</button>
-                  </div>
-                </div> <!-- PRODUCTO !-->
-
+                </div> 
             </div>   <!--PRODUCTO-GRID -->
 
         </div>
        </section>
+
+
+       <div class="btn_contenedor">
+         <button >Ver todo</button>
+       </div>
     </main>
+
+    
+   <footer class="footer-simple">
+  <div class="footer-simple__contenido contenedor">
+    <h4>Únete a nuestro club de lectura</h4>
+    <p>Recibe novedades, recomendaciones y descuentos exclusivos en tu correo.</p>
+    <form class="footer-simple__form">
+      <input type="email" placeholder="Tu email">
+      <button type="submit">Unirme</button>
+    </form>
+    <p class="footer-simple__copy">&copy; 2026 LibreriMaster. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+    <script src="./car.js"></script>
+    <script src="./src/app.js" type="module"></script>
 </body>
 </html>
 
@@ -151,3 +128,8 @@
 <!-- <div class="tarjeta">
                    
                 </div> -->
+
+
+
+
+                 

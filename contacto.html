@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+
+ <header class="contacto-header">
+        <div class="contenedor-contacto">
+            <div class="barra-contacto">
+
+                <div class="logo">
+                    <h1 class="nombre-sitio contacto-title">Libreri<span>Master</span></h1>
+                </div>
+
+                <div class="menu">
+                    <nav class="navegacion-contacto mt-3">
+                        <a class="link-contacto" href="./index.html">Menu principal</a>
+                        <a class="link-contacto" href="#">Catalogo</a>
+                        <a class="link-contacto" href="#">Lo Nuevo</a>
+                        <a class="link-contacto" href="./contacto.html">Contactanos</a>
+
+                    <div class="contenedor-carrito">
+                          <ul>
+                        <li class="submenu">
+                                <img src="./img/7323211845d8baf15fabb4767b88c1b1-removebg-preview.png" width="60px" id="img-carrito">
+                                <div id="carrito">
+                                        
+                                        <table id="lista-carrito" class="u-full-width">
+                                            <thead>
+                                                <tr>
+                                                    <th>Imagen</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                        
+                                          <!-- <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a> -->
+                                          <a href="#"  class="ver-carrito">Ver Carrito</a>
+                                       
+                                        
+                                </div>
+                        </li>
+                 </ul>
+                   </div> <!-- carro  -->
+                    </nav>
+
+                
+
+                </div>
+            </div>
+    </div>
+        </div>
+
+      
+    </header>
+<body>
+    <main class="main  contenedor" >
+        <h2 class="title">Contacto</h2>
+
+        <form class="formulario" action="">
+            <fieldset>
+                <legend>Tus Datos</legend>
+
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                        <input type="text" name="" id="nombre" placeholder="Tu nombre">
+                    
+                </div>
+
+                <div class="campo">
+                    <label for="Asunto">Asunto:</label>
+                        <input type="text" id="Asunto" placeholder="Titulo de la Consulta">
+                    
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                        <input type="email" id="email" placeholder="@gmail.com">
+                    
+                </div>
+
+                <div class="campo">
+                    <label for="tel">Telefono:</label>
+                        <input type="tel" name="" id="tel" placeholder="+504">
+                    
+                </div>
+
+                <div class="campo">
+                    <label for="textarea">Mensaje:</label>
+                        <textarea rows="20" cols="20" id="textarea"></textarea>
+                    
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>País/Ubicación</legend>
+                <div class="campo">
+                    <label for="pais">País: </label>
+                        <select name="" id="pais">
+                            <option value="">-- Seleccione --</option>
+                            <option value="">Salvador</option>
+                            <option value="">Mexico</option>
+                            <option value="">Estados Unido</option>
+                            <option selected value="">Honduras</option>
+                            <option value="">Nicaragua</option>
+                            <option value="">Guatemala</option>
+                            <option value="">Costa Rica</option>
+                            <option value="">Panáma</option>
+                            <option value="">Haíti</option>
+                            <option value="">Colombia</option>
+                            <option value="">Argentina</option>
+                            <option value="">Chile</option>
+                            <option value="">Venezuela</option>
+                        </select>
+                   
+                </div>
+
+                <div class="campo">
+                    <label for="departamento"> Departamento: </label>
+                        <select name="" id="departamento">
+                            <option value="">Comayagua</option>
+                            <option value="">Gracias A Dios</option>
+                            <option value="">Santa Barbara</option>
+                        </select>
+                   
+                </div>
+
+                <div class="campo">
+                    <label for="ciudad">Ciudad: </label>
+                        <select name="" id="ciudad">
+                            <option value="">Siguatepeque</option>
+                            <option value="">San Pedro Sula</option>
+                            <option value="">Tegucigalpa</option>
+                        </select>
+                   
+            </fieldset>
+
+            <fieldset>
+                <legend>Información Extra</legend>
+
+                <div class="campo">
+                    <label for="cliente">cliente:</label>
+                        <input type="radio" id="cliente" name="tipo">
+                    
+                </div>
+
+                <div class="campo">
+                    <label for="proveedor">Proveedor:</label>
+                        <input type="radio" id="Proveedor" name="tipo">
+                    
+                </div>
+            </fieldset>
+
+            <input class="btn" type="submit" value="Enviar Formulario">
+        </form>
+    </main>
+    
+</body>
+</html>
