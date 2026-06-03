@@ -12,27 +12,41 @@
     <title></title>
 </head>
 <body>
-    <header class="header">
-        <div class="contenedor contenido-header">
-            <div class="barra">
+  <header class="header">
+    <div class="contenedor contenido-header">
+        <div class="barra">
+            <!-- 1. LOGO -->
+            <div class="logo">
+                <h1 class="nombre-sitio">Libreri<span>Master</span></h1>
+            </div>
 
-                <div class="logo">
-                    <h1 class="nombre-sitio">Libreri<span>Master</span></h1>
-                </div>
+            <!-- 2. NAVEGACIÓN (Simplificada y corregida) -->
+            <nav class="navegacion">
+                <a class="link" href="#">Inicio</a>
+                <a class="link" href="Catalogo.html">Catálogo</a>
+                <a class="link" href="#">Novedades</a>
+                <a class="link" href="./contacto.html">Contacto</a>
+            </nav>
 
-                <div class="menu">
-                    <nav class="navegacion">
-                        <a class="link" href="#">Menu principal</a>
-                        <a class="link" href="Catalogo.html">Catalogo</a>
-                        <a class="link" href="#">Lo Nuevo</a>
-                        <a class="link" href="./contacto.html">Contactanos</a>
+            <!-- 3. BLOQUE DERECHO (Buscador + Carrito + Login integrados) -->
+            <div class="bloque-derecho">
+                <form class="busqueda-moderna">
+                    <input type="text" placeholder="Buscar libros...">
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lupa-blanca">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
 
-                    <div class="contenedor-carrito">
-                          <ul>
-                        <li class="submenu">
-                                <img src="./img/7323211845d8baf15fabb4767b88c1b1-removebg-preview.png" width="60px" id="img-carrito">
-                                <div id="carrito">
-                                        
+                <div class="interacciones-header">
+                    <!-- Contenedor Carrito -->
+                    <div class="carritos-header">
+                        <div class="contenedor-carrito">
+                            <ul>
+                                <li class="submenu">
+                                    <div id="carrito">
                                         <table id="lista-carrito" class="u-full-width">
                                             <thead>
                                                 <tr>
@@ -45,32 +59,57 @@
                                             </thead>
                                             <tbody></tbody>
                                         </table>
-                                        
-                                          <!-- <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a> -->
-                                          <a href="#"  class="ver-carrito">Ver Carrito</a>
-                                       
-                                        
-                                </div>
-                        </li>
-                 </ul>
-                   </div> <!-- carro  -->
-                    </nav>
+                                        <a href="#" class="ver-carrito">Ver Carrito</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <form class="busqueda">
-                        <input type="text" placeholder="Buscar libros...">
-                        <button type="submit">🔍</button>
-                    </form>
+                        <div class="contenedor-carrito-dos">
+                            <img src="./img/7323211845d8baf15fabb4767b88c1b1-removebg-preview.png" width="35px" alt="Carrito">
+                        </div>
+                    </div>
 
+                    <!-- NUEVO: Botón de Inicio de Sesión -->
+                    <a href="#" class="login-header" aria-label="Iniciar Sesión">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
                 </div>
             </div>
-            <div class="slogan">
-                <h2>"Cada libro es una inversión en ti mismo"</h2>
-                <p>“Encuentra tu libro ideal con nosotros”</p>
-            </div>
-            
-    </div>
         </div>
-    </header>
+
+        <!-- CARRUSEL CENTRAL (Se mantiene intacto con tu imagen de Montecristo) -->
+        <div class="carrusel-contenedor">
+            <button class="flecha-carrusel prev" aria-label="Anterior">
+                <span>&#10094;</span>
+            </button>
+            
+            <div class="carrusel-imagen-wrapper">
+                <img src="../img/condemontecrito-removebg-preview.png" class="libro-central" alt="El Conde de Montecristo">
+            </div>
+
+            <button class="flecha-carrusel next" aria-label="Siguiente">
+                <span>&#10095;</span>
+            </button>
+
+            <div class="carrusel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <!-- SLOGAN -->
+        <div class="slogan">
+            <h2>"Cada libro es una inversión en ti mismo"</h2>
+            <p>“Encuentra tu libro ideal con nosotros”</p>
+        </div>
+    </div>
+</header>
     <main>
         <!-- HOME aqui se muestran todo los libros  -->
        <section class="contenedor">
@@ -79,22 +118,7 @@
 
             <div class="producto__grid" id="producto-grid">
 
-                <div class="producto"> <!-- producto -->
-                  <a href="./chatGptExample.html" class="producto__link">
-                  <a href="./chatGptExample.html" class="producto__link">
-                    <img class="producto__imagen" src="./img/sombra_del_viento.webp" alt="cementerio de animales">
-                  </a>                  </a>
-                  <div class="producto__contenido">
-                    <h3 class="producto__nombre">Título del libro</h3>
-                    <p class="producto__autor">Autor: Nombre del autor</p>
-                    <p class="producto__descripcio">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde harum laudantium, explicabo voluptates cumque voluptas doloribus provident</p>
-                    <div class="producto__precios">
-                        <p class="producto__precio"> $9.99</p>
-                    </div>
-                    <button class="producto__boton" data-id="1">Agregar al carrito</button>
-                  </div>
-                </div> 
+               
             </div>   <!--PRODUCTO-GRID -->
 
         </div>
