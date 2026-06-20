@@ -11,27 +11,41 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="contacto-header">
-        <div class="contenedor-contacto">
-            <div class="barra-contacto">
+     <header class="header">
+    <div class="contenedor contenido-header">
+        <div class="barra">
+            <!-- 1. LOGO -->
+            <div class="logo">
+                 <a href="index.html"><h1 class="nombre-sitio">Libreri<span>Master</span></h1></a> 
+            </div>
 
-                <div class="logo">
-                    <h1 class="nombre-sitio contacto-title">Libreri<span>Master</span></h1>
-                </div>
+            <!-- 2. NAVEGACIÓN (Simplificada y corregida) -->
+            <nav class="navegacion">
+                <a class="link" href="index.html">Inicio</a>
+                <a class="link" href="Catalogo.html">Catálogo</a>
+                <a class="link" href="#">Novedades</a>
+                <a class="link" href="./contacto.html">Contacto</a>
+            </nav>
 
-                <div class="menu">
-                    <nav class="navegacion-contacto mt-3">
-                        <a class="link-contacto" href="./index.html">Menu principal</a>
-                        <a class="link-contacto" href="#">Catalogo</a>
-                        <a class="link-contacto" href="#">Lo Nuevo</a>
-                        <a class="link-contacto" href="./contacto.html">Contactanos</a>
+            <!-- 3. BLOQUE DERECHO (Buscador + Carrito + Login integrados) -->
+            <div class="bloque-derecho">
+                <form class="busqueda-moderna">
+                    <input type="text" placeholder="Buscar libros...">
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lupa-blanca">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
 
-                    <div class="contenedor-carrito">
-                          <ul>
-                        <li class="submenu">
-                                <img src="./img/7323211845d8baf15fabb4767b88c1b1-removebg-preview.png" width="60px" id="img-carrito">
-                                <div id="carrito">
-                                        
+                <div class="interacciones-header">
+                    <!-- Contenedor Carrito -->
+                    <div class="carritos-header">
+                        <div class="contenedor-carrito">
+                            <ul>
+                                <li class="submenu">
+                                    <div id="carrito">
                                         <table id="lista-carrito" class="u-full-width">
                                             <thead>
                                                 <tr>
@@ -44,26 +58,57 @@
                                             </thead>
                                             <tbody></tbody>
                                         </table>
-                                        
-                                          <!-- <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a> -->
-                                          <a href="#"  class="ver-carrito">Ver Carrito</a>
-                                       
-                                        
-                                </div>
-                        </li>
-                 </ul>
-                   </div> <!-- carro  -->
-                    </nav>
+                                        <a href="#" class="ver-carrito">Ver Carrito</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
-                
+                        <div class="contenedor-carrito-dos">
+                            <img src="./img/7323211845d8baf15fabb4767b88c1b1-removebg-preview.png" width="35px" alt="Carrito">
+                        </div>
+                    </div>
 
+                    <!-- NUEVO: Botón de Inicio de Sesión -->
+                    <a href="#" class="login-header" aria-label="Iniciar Sesión">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
                 </div>
             </div>
-    </div>
         </div>
 
-      
-    </header>
+        <!-- CARRUSEL CENTRAL (Se mantiene intacto con tu imagen de Montecristo) -->
+        <div class="carrusel-contenedor">
+            <button class="flecha-carrusel prev" aria-label="Anterior">
+                <span>&#10094;</span>
+            </button>
+            
+            <div class="carrusel-imagen-wrapper">
+                <img src="../img/condemontecrito-removebg-preview.png" class="libro-central" alt="El Conde de Montecristo">
+            </div>
+
+            <button class="flecha-carrusel next" aria-label="Siguiente">
+                <span>&#10095;</span>
+            </button>
+
+            <div class="carrusel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <!-- SLOGAN -->
+        <div class="slogan">
+            <h2>"Cada libro es una inversión en ti mismo"</h2>
+            <p>“Encuentra tu libro ideal con nosotros”</p>
+        </div>
+    </div>
+</header>
 
      <section class="contenedor">
         <div class="productos">
@@ -241,16 +286,49 @@
     </main>
 
     
-   <footer class="footer-simple">
-  <div class="footer-simple__contenido contenedor">
-    <h4>Únete a nuestro club de lectura</h4>
-    <p>Recibe novedades, recomendaciones y descuentos exclusivos en tu correo.</p>
-    <form class="footer-simple__form">
-      <input type="email" placeholder="Tu email">
-      <button type="submit">Unirme</button>
-    </form>
-    <p class="footer-simple__copy">&copy; 2026 LibreriMaster. Todos los derechos reservados.</p>
-  </div>
-</footer>
+    <footer class="footer">
+        <div class="Lectura">
+            <div class="lectura__parent">
+                <h2 class="Lectura__heading">Únete a nuestro club de lectura</h2>
+                <p class="lectura_descripcion">Suscribete para recibir notícias, recomendaciones y eventos exclusivos directamente en tu correo</p>
+            </div>
+            <form class="formulario" action="">
+                    <label class="formulario__label" for="correo"></label>
+                    <input class="formulario__email" placeholder="Tu correo electrónico.." type="email" id="correo">
+                    <button class="formulario__boton">SUSCRIBRIME</button>
+            </form>
+        </div>
+
+        
+        
+            <div class="media">
+
+                <nav class="media__nav">
+                    <a class="media__social" href="#">
+                        <img src="./img/blancoinstagra-removebg-preview.png" alt="">
+                        
+                    </a>
+                    <a class="media__social" href="#">
+                        <img src="./img/blancoFace-removebg-preview.png" alt="">
+                        
+                    </a>
+                    <a class="media__social" href="#">
+                        <img src="./img/tik-tok.png" alt="">
+                        
+                    </a>
+                    <a class="media__social" href="#">
+                        <img src="./img/chat.png" alt="">
+                        
+                    </a>
+                    
+                </nav>
+                <p class="media__correo">LibreriMaster@clublectura.com</p>
+            </div>
+
+       
+        
+    </footer>
+    <p class="footer-simple__copy">&copy; 2026 Club de LibreriMaster. Todos los derechos reservados. | LibreriMaster@clublectura.com</p>
+
 </body>
 </html>

@@ -17,7 +17,9 @@
         <div class="barra">
             <!-- 1. LOGO -->
             <div class="logo">
+               <a href="">
                 <h1 class="nombre-sitio">Libreri<span>Master</span></h1>
+               </a> 
             </div>
 
             <!-- 2. NAVEGACIÓN (Simplificada y corregida) -->
@@ -114,7 +116,7 @@
         <!-- HOME aqui se muestran todo los libros  -->
        <section class="contenedor">
         <div class="productos">
-            <h2 class="productos__heading">Nuestrso Libros</h2>
+            <h2 class="productos__heading">Nuestro Libros</h2>
 
             <div class="producto__grid" id="producto-grid">
 
@@ -125,23 +127,53 @@
        </section>
 
 
-       <div class="btn_contenedor">
-         <button >Ver todo</button>
-       </div>
+       
     </main>
 
     
-   <footer class="footer-simple">
-  <div class="footer-simple__contenido contenedor">
-    <h4>Únete a nuestro club de lectura</h4>
-    <p>Recibe novedades, recomendaciones y descuentos exclusivos en tu correo.</p>
-    <form class="footer-simple__form">
-      <input type="email" placeholder="Tu email">
-      <button type="submit">Unirme</button>
-    </form>
-    <p class="footer-simple__copy">&copy; 2026 LibreriMaster. Todos los derechos reservados.</p>
-  </div>
-</footer>
+    <footer class="footer">
+        <div class="Lectura">
+            <div class="lectura__parent">
+                <h2 class="Lectura__heading">Únete a nuestro club de lectura</h2>
+                <p class="lectura_descripcion">Suscribete para recibir notícias, recomendaciones y eventos exclusivos directamente en tu correo</p>
+            </div>
+            <form class="formulario" action="">
+                    <label class="formulario__label" for="correo"></label>
+                    <input class="formulario__email" placeholder="Tu correo electrónico.." type="email" id="correo">
+                    <button class="formulario__boton">SUSCRIBRIME</button>
+            </form>
+        </div>
+
+        
+        
+            <div class="media">
+
+                <nav class="media__nav">
+                    <a class="media__social" href="#">
+                        <img src="./img/blancoinstagra-removebg-preview.png" alt="">
+                        
+                    </a>
+                    <a class="media__social" href="#">
+                        <img src="./img/blancoFace-removebg-preview.png" alt="">
+                        
+                    </a>
+                    <a class="media__social" href="#">
+                        <img src="./img/tik-tok.png" alt="">
+                        
+                    </a>
+                    <a class="media__social" href="#">
+                        <img src="./img/chat.png" alt="">
+                        
+                    </a>
+                    
+                </nav>
+                <p class="media__correo">LibreriMaster@clublectura.com</p>
+            </div>
+
+       
+        
+    </footer>
+    <p class="footer-simple__copy">&copy; 2026 Club de LibreriMaster. Todos los derechos reservados. | LibreriMaster@clublectura.com</p>
 
     <script src="./car.js"></script>
     <script src="./src/app.js" type="module"></script>
@@ -149,9 +181,7 @@
 </html>
 
 
-<!-- <div class="tarjeta">
-                   
-                </div> -->
+
 
 
 
