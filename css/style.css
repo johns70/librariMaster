@@ -2,7 +2,7 @@
  --blanco: #ffffff;
  --negro: #000000;
  --gris: #343A40;
-
+ --color-grisOscuro: #2c353e;
  --fuentePrincipal: 'Raleway', sans-serif;
 }
 
@@ -762,14 +762,56 @@ img {
     .Lectura__heading {
         font-size: 4.5rem;
     }
-
+    
     .lectura_descripcion {
         font-size: 2rem;
         font-weight: 500;
     }
 }
 
+/* SELECTORES */
+.seleccion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
 
+.seleccion_filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+}
+.seleccion_filter label {
+    margin-right: 1rem;
+    font-family: var(--color-grisOscuro);
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.seleccion__opcion {
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+@media (min-width: 925px) {
+    .seleccion {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 8rem;
+    }
+
+    .seleccion_filter {
+        display: flex;
+        flex-direction: row;
+        align-items: unset;
+        row-gap: unset;
+    }
+
+   
+}
 /* Formulario */
 .formulario div {
     display: flex;

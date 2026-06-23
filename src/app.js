@@ -8,10 +8,40 @@ document.addEventListener('DOMContentLoaded', async () => {
     //1.pedir datos a la API
     const datosLibros = await API.obtenerLibros()
 
-    //2.Pasarle datos a la UI para que renderize
-    UI.renderizarTarjetas(datosLibros)
+    UI.renderizarTarjetas(datosLibros);
 
-    const gridProductos = document.getElementById('producto-grid');
+    // 3. Llenar los selectores usando los mismos datos que ya tenemos
+    UI.renderizarEditorial(datosLibros);
+    UI.renderizarAutores(datosLibros);
+    UI.renderizarCategorias(datosLibros);
+
+
+    const gridProductos = document.querySelector('#producto-grid');
+
+        
+    const selectorEditorial = document.querySelector("#editorial")
+    const selectorAutor = document.querySelector("#autor")
+    const selectorCategoria = document.querySelector("#categoria")
+
+
+    async function filtrarLibros() {
+        const filtros = {
+            editorial: selectorEditorial ? selectorEditorial.value : "",
+            autor: selectorAutor ? selectorAutor.value : "",
+            categoria: selectorCategoria ? selectorCategoria.value : ""
+        }
+
+        
+            const librosFiltrados = await API.obtenerLibros(filtros)
+        
+        
+            UI.renderizarTarjetas(librosFiltrados)
+    }
+
+
+    if (selectorEditorial) selectorEditorial.addEventListener('change', filtrarLibros);
+    if (selectorAutor) selectorAutor.addEventListener('change', filtrarLibros);
+    if (selectorCategoria) selectorCategoria.addEventListener('change', filtrarLibros);
 
     // Escuchamos el contenedor padre, que SÍ existe en el HTML desde el inicio
     gridProductos.addEventListener('click', (evento) => {
