@@ -51,7 +51,7 @@ export const UI = {
         selectorEditorial.innerHTML = `<option value="">Todas las Editoriales</option>`;
 
         editorial.forEach(edi => {
-            const options = `<option value="${edi.id_editorial}">${edi.nombre_editorial}</option>`;
+            const options = `<option value="${edi.id_editorial}">${edi.nombre}</option>`;
             // CORREGIDO: Ahora usa la variable correcta (selectorEditorial)
             selectorEditorial.insertAdjacentHTML('beforeend', options); 
         }); 
@@ -65,7 +65,7 @@ export const UI = {
         selectorAutor.innerHTML = `<option value="">Todos los Autores</option>`;
 
         autores.forEach(aut => {
-            const options = `<option value="${aut.id_autor}">${aut.nombre_autor}</option>`;
+            const options = `<option value="${aut.id_autor}">${aut.nombre}</option>`;
             selectorAutor.insertAdjacentHTML('beforeend', options);
         });
     },
@@ -78,7 +78,7 @@ export const UI = {
         selectorCategoria.innerHTML = `<option value="">Todas las Categorías</option>`;
 
         categorias.forEach(cat => {
-            const options = `<option value="${cat.id_categoria}">${cat.nombre_categorias}</option>`;
+            const options = `<option value="${cat.id_categoria}">${cat.nombre}</option>`;
             selectorCategoria.insertAdjacentHTML('beforeend', options);
         });
     }

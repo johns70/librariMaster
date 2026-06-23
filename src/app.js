@@ -7,13 +7,16 @@ import { UI } from "./ui.js";
 document.addEventListener('DOMContentLoaded', async () => {
     //1.pedir datos a la API
     const datosLibros = await API.obtenerLibros()
+    const datosAutor = await API.obtenerAutores()
+    const datosEdi = await API.obtenerEditoriales()
+    const datoscateg = await API.obtenerCategorias()
 
     UI.renderizarTarjetas(datosLibros);
 
     // 3. Llenar los selectores usando los mismos datos que ya tenemos
-    UI.renderizarEditorial(datosLibros);
-    UI.renderizarAutores(datosLibros);
-    UI.renderizarCategorias(datosLibros);
+    UI.renderizarEditorial(datosEdi);
+    UI.renderizarAutores(datosAutor);
+    UI.renderizarCategorias(datoscateg);
 
 
     const gridProductos = document.querySelector('#producto-grid');
